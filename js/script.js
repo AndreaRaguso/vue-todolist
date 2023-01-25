@@ -37,16 +37,11 @@ createApp({
 
         addTodo(){
 
-            if(this.newTodo =! "" && this.newTodo.lenght > 4){
-                this.todos.push({
-                    text: this.newTodo,
-                    done: false
-                })
-                this.newTodo= "";
-            }
-            else{
-                this.newTodo= "";
-            }
+            this.todos.push({
+                text: this.newTodo,
+                done: false
+            })
+            this.newTodo= "";
 
         },
 

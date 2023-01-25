@@ -24,12 +24,17 @@
             </div>
 
             <div class="tasks-container">
-                <ul>
+                <ul v-if="todos.length > 0">
                     <li class="task"  v-for="(todo,index) in todos" :class="checkDone(todo)" @click="todo.done = !todo.done">
                         {{todo.text}}
-                        <i class="fas fa-times" @click="removeTodo(index)"></i>
+                        <i class="fas fa-times" @click.stop="removeTodo(index)"></i>
                     </li>
                 </ul>
+
+                <h2 v-else>
+                    Super Produttivo Hai finito le tue task!
+                </h2>
+
             </div>
             
         </div>
