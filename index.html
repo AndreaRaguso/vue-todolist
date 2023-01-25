@@ -17,15 +17,15 @@
             </div>
 
             <div class="new-task">
-                <input type="text" v-model="newTodo" placeholder="Nuova task">
-                <button @click="addTodo()">
+                <input type="text" v-model="newTodo" placeholder="Nuova task" @keyup.enter="addTodo()">
+                <button @click="addTodo()" >
                     Aggiungi
                 </button>
             </div>
 
             <div class="tasks-container">
                 <ul>
-                    <li class="task"  v-for="(todo,index) in todos" :class="checkDone(todo)">
+                    <li class="task"  v-for="(todo,index) in todos" :class="checkDone(todo)" @click="todo.done = !todo.done">
                         {{todo.text}}
                         <i class="fas fa-times" @click="removeTodo(index)"></i>
                     </li>

@@ -36,12 +36,23 @@ createApp({
         },
 
         addTodo(){
-            this.todos.push({
-                text: this.newTodo,
-                done: false
-            })
-            this.newTodo= "";
+
+            if(this.newTodo =! "" && this.newTodo.lenght > 4){
+                this.todos.push({
+                    text: this.newTodo,
+                    done: false
+                })
+                this.newTodo= "";
+            }
+            else{
+                this.newTodo= "";
+            }
+
         },
+
+        addDone(){
+            this.todos[index] = true;
+        }
 
     },
 
